@@ -1,0 +1,13 @@
+<div class="product-container">
+  <div (click)="onOpenDetail()" class="product-image">
+    <img src={{product.url}}>
+  </div>
+  <div class="info-prod">
+    <h3>{{product.name}}</h3>
+    <p>${{product.price}}</p>
+    <select class="form-select select-input" [(ngModel)]="selectedAmount">
+      <option *ngFor="let item of [].constructor(maxProdAmount); let i = index">{{i + 1}}</option>
+    </select>
+    <button type="button" class="btn btn-primary" (click)="onAdd()">Add to cart</button>
+  </div>
+</div>
